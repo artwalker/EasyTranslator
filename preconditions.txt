@@ -1,0 +1,11 @@
+openai
+pandas
+chardet
+openpyxl
+lxml
+pdfminer
+pdfminer.six
+ebooklib
+python-docx
+mobi
+bs4

@@ -1,0 +1,5 @@
+HELLO!My name is Ethan Wang. I am currently pursuing a master's degree in Software Engineering at North China Electric Power University.  
+I have a strong interest in embedded development and embedded operating systems, which naturally includes a passion for programming.  
+At present, I am delving into STM32 library development, FreeRTOS kernel development and applications, as well as exploring the realm of artificial intelligence. My aspiration is to excel as an embedded software engineer and contribute to the creation of an exceptional open-source embedded operating system.  
+Additionally, I am in the process of building an office treadmill, enabling me to code while walking.  
+Currently, I am an intern at Megatronix and enjoy participating in various communities and competitions, dedicated to creating innovative solutions! 
