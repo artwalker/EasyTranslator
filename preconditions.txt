@@ -9,3 +9,5 @@ ebooklib
 python-docx
 mobi
 bs4
+python-dotenv
+
