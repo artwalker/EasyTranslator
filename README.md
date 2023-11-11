@@ -41,13 +41,13 @@ git clone https://github.com/artwalker/EasyTranslator.git
 
   - If using OpenAI API provided by Azure, the following parameters need to be set:
 
-  - `ENGINE_AZURE`: Deployment name on Azure
+  - `OPENAI_API_MODEL_AZURE`: Deployment name on Azure
 
   - `OPENAI_API_KEY_AZURE`: Specify the key for Azure OpenAI API
 
   - `OPENAI_API_BASE_AZURE`: API address associated with the deployment name
 
-  - `OPENAI_API_TYPE_AZURE`: Type of the API
+  - `OPENAI_API_TYPE_AZURE`: Endpoint of the API
 
   - `OPENAI_API_VERSION_AZURE`: Version of the API
 

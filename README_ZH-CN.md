@@ -33,19 +33,18 @@ git clone https://github.com/artwalker/EasyTranslator.git
 
 - .env
   - `OPENAI_API_KEY`: 指定 OpenAI API Key，可以使用多个，格式如 "sk-xxxxxxx, sk-xxxxxxx"
+
   - `GPT_MODEL`: `GPT_MODEL`: 指定所使用的模型，例如 "gpt-3.5-turbo"
 
   - `GPT_TEMPERATURE`: 指定模型回复的随机度，因为是翻译文本，所以最好设置为0
 
   - 若使用 **Azure** 提供的 OpenAI API，需要设置以下参数：
 
-  - `ENGINE_AZURE`: 部署在 Azure 上的引擎名称
+  - `OPENAI_API_MODEL_AZURE`: 部署在 Azure 上的引擎名称
 
   - `OPENAI_API_KEY_AZURE`: 指定 Azure OpenAI API 的密钥
 
-  - `OPENAI_API_BASE_AZURE`: 与部署名相关联的 API 地址
-
-  - `OPENAI_API_TYPE_AZURE`: API 的类型
+  - `OPENAI_API_ENDPOINT_AZURE`: Azure 的端点
 
   - `OPENAI_API_VERSION_AZURE`: API 的版本
 

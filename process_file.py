@@ -47,7 +47,6 @@ class ProcessFile:
         self.tlist = ""
         self.test = ""
         self.gpt_model = ""
-        self.engine_azure = ""
         self.gpt_temperature = ""
 
         self.title = ""
@@ -60,7 +59,7 @@ class ProcessFile:
         self.translated_text = ""
         self.translated_short_text = ""
         self.count = 0
-        self.messges = ""
+        self.messages = ""
 
         self._set_args_from_parameterReader(parameterReader)
 
@@ -80,12 +79,15 @@ class ProcessFile:
         self.new_filename = parameterReader.new_filename
         self.new_filenametxt = parameterReader.new_filenametxt
         self.show = parameterReader.show
-        self.azure = parameterReader.azure
         self.tlist = parameterReader.tlist
         self.test = parameterReader.test
         self.gpt_model = parameterReader.gpt_model
-        self.engine_azure = parameterReader.engine_azure
         self.gpt_temperature = parameterReader.gpt_temperature
+
+        self.azure = parameterReader.azure
+        if self.azure:
+            self.client = parameterReader.client
+            self.openai_api_model_azure = parameterReader.openai_api_model_azure
 
     def _get_pdf_total_pages(self):
         """Get total pages."""
@@ -239,36 +241,37 @@ class ProcessFile:
 
     def _get_completion_from_messages(self):
         """Get completion from messages."""
-        response = openai.ChatCompletion.create(
+        response = openai.chat.completions.create(
             model=self.gpt_model,
             messages=self.messages,
             temperature=self.gpt_temperature,
         )
 
-        content = response.choices[0].message["content"]
+        content = response.choices[0].message.content
 
         token_dict = {
-        'prompt_tokens':response['usage']['prompt_tokens'],
-        'completion_tokens':response['usage']['completion_tokens'],
-        'total_tokens':response['usage']['total_tokens'],
+        'prompt_tokens':response.usage.prompt_tokens,
+        'completion_tokens':response.usage.completion_tokens,
+        'total_tokens':response.usage.total_tokens,
         }
+
         return content, token_dict
 
     def _get_completion_from_messages_by_azure(self):
         """Get completion from messages by azure."""
-        response = openai.ChatCompletion.create(
-            engine=self.engine_azure,
+        response = self.client.chat.completions.create(
+            model=self.openai_api_model_azure,
             messages=self.messages,
             temperature=self.gpt_temperature, 
         )
 
-        #     print(str(response.choices[0].message))
-        content = response.choices[0].message["content"]
+        #print(str(response.choices[0].message))
+        content = response.choices[0].message.content
 
         token_dict = {
-        'prompt_tokens':response['usage']['prompt_tokens'],
-        'completion_tokens':response['usage']['completion_tokens'],
-        'total_tokens':response['usage']['total_tokens'],
+        'prompt_tokens':response.usage.prompt_tokens,
+        'completion_tokens':response.usage.completion_tokens,
+        'total_tokens':response.usage.total_tokens,
         }
         return content, token_dict
 

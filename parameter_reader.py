@@ -29,6 +29,8 @@ class ParameterReader:
         self.api_proxy_url = ""
         self.gpt_model = ""
         self.openai_api_engine_azure = ""
+        self.openai_api_model_azure = ""
+        self.client = ""
         self.gpt_temperature = ""
         
         # The arguments from the settings.cfg file
@@ -59,16 +61,17 @@ class ParameterReader:
         _ = load_dotenv(find_dotenv(), override=True)
         self.gpt_temperature = float(os.getenv('GPT_TEMPERATURE'))
         if self.azure:
-            # Get the OpenAI API keys from the .env file
-            key_sets = os.getenv('OPENAI_API_KEY_AZURE')
-            # If there are multiple keys, split them into an array
-            key_array = key_sets.split(',')
-            # Set the OpenAI API key
-            openai.api_key  = random.choice(key_array)
-            openai.api_base = os.getenv('OPENAI_API_BASE_AZURE')
-            openai.api_type = os.getenv('OPENAI_API_TYPE_AZURE')
-            openai.api_version = os.getenv('OPENAI_API_VERSION_AZURE')
-            self.openai_api_engine_azure = os.getenv('OPENAI_API_ENGINE_AZURE')
+            # imort the azure.identity package
+            from openai import AzureOpenAI
+
+            # Set the Azure OpenAI parameters
+            self.client = AzureOpenAI(
+            api_version=os.getenv('OPENAI_API_VERSION_AZURE'),
+            azure_endpoint=os.getenv('OPENAI_API_ENDPOINT_AZURE'),
+            api_key=os.getenv('OPENAI_API_KEY_AZURE'),
+            )
+
+            self.openai_api_model_azure = os.getenv('OPENAI_API_MODEL_AZURE')
         else:
             # Get the OpenAI API keys from the .env file
             key_sets = os.getenv('OPENAI_API_KEY')
@@ -83,12 +86,12 @@ class ParameterReader:
         # If there is proxy, then use it
         if len(self.api_proxy) == 0:
             print("-" * 3)
-            print(f"\033[1;32mOpenAI API proxy not detected, currently using the api address: {openai.api_base}\033[0m") 
+            print(f"\033[1;32mOpenAI API proxy not detected, currently using the api address: {openai.base_url}\033[0m") 
         else:
             self.api_proxy_url = self.api_proxy + "/v1"
-            openai.api_base = os.environ.get("OPENAI_API_BASE", self.api_proxy_url)
+            openai.base_url = os.environ.get("OPENAI_API_URL", self.api_proxy_url)
             print("-" * 3)
-            print(f"\033[1;32mUsing OpenAI API proxy, the proxy address is: {openai.api_base}\033[0m")
+            print(f"\033[1;32mUsing OpenAI API proxy, the proxy address is: {openai.base_url}\033[0m")
 
     def _set_args_from_parameter_reader(self):
         """Get the settings from the settings.cfg file."""
