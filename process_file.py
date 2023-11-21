@@ -11,6 +11,7 @@ import random
 import docx
 import pandas as pd
 import mobi
+import sys
 
 from docx import Document
 from lxml import etree
@@ -106,7 +107,6 @@ class ProcessFile:
             print(self.text)
             print("*" * 3)
         print("\033[1;32mINFO:Finished converting pdf to text\033[0m")
-        print("-" * 3)
 
     def _convert_mobi_to_text(self):
         """Access the content fo mobi and then convert it to text."""
@@ -479,7 +479,10 @@ class ProcessFile:
         elif self.filename.endswith('.epub'):
             self.book = epub.read_epub(self.filename)
         else:
-            print("INFO:Unsupported file type right now.")
+            print("-" * 3)
+            print("\033[91mINFO:Unsupported file type right now.\033[0m")
+            print("-" * 3)
+            sys.exit(0)
 
     def _get_txt_content(self):
         """Get txt content."""
