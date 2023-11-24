@@ -62,6 +62,9 @@ class ProcessFile:
         self.count = 0
         self.messages = ""
 
+        self.client = ""
+        self.non_azure_client = ""
+
         self._set_args_from_parameterReader(parameterReader)
 
     def _set_args_from_parameterReader(self, parameterReader):
@@ -84,11 +87,16 @@ class ProcessFile:
         self.test = parameterReader.test
         self.gpt_model = parameterReader.gpt_model
         self.gpt_temperature = parameterReader.gpt_temperature
+        self.api_proxy = parameterReader.api_proxy
 
         self.azure = parameterReader.azure
         if self.azure:
             self.client = parameterReader.client
             self.openai_api_model_azure = parameterReader.openai_api_model_azure
+        
+        if len(self.api_proxy) != 0:
+            self.non_azure_client = parameterReader.non_azure_client
+
 
     def _get_pdf_total_pages(self):
         """Get total pages."""
@@ -241,11 +249,18 @@ class ProcessFile:
 
     def _get_completion_from_messages(self):
         """Get completion from messages."""
-        response = openai.chat.completions.create(
-            model=self.gpt_model,
-            messages=self.messages,
-            temperature=self.gpt_temperature,
-        )
+        if len(self.api_proxy) == 0:
+            response = openai.chat.completions.create(
+                model=self.gpt_model,
+                messages=self.messages,
+                temperature=self.gpt_temperature,
+            )
+        else:
+            response = self.non_azure_client.chat.completions.create(
+                model=self.gpt_model,
+                messages=self.messages,
+                temperature=self.gpt_temperature,
+            )
 
         content = response.choices[0].message.content
 
