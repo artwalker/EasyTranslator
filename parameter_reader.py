@@ -49,10 +49,10 @@ class ParameterReader:
         self._set_args_from_command()
         # 2. Set the OpenAI API key.
         self._access_openai_key()
-        # 3. Set the OpenAI API url.
-        self._access_openai_url()
-        # 4. Set the parameters from the settings.cfg file and the .env file.
+        # 3. Set the parameters from the settings.cfg file and the .env file.
         self._set_args_from_parameter_reader()
+        # 4. Set the OpenAI API url.
+        self._access_openai_url()
         # 5. Load the translated dictionary from the json file.
         self._load_tranlated_dict()
 
@@ -84,11 +84,8 @@ class ParameterReader:
     def _access_openai_url(self):
         """Set the OpenAI API url."""
         # If there is proxy, then use it
-        if len(self.api_proxy) == 0:
-            print("-" * 3)
-            print(f"\033[1;32mOpenAI API proxy not detected, currently using the api address: {openai.base_url}\033[0m") 
-        else:
-            self.api_proxy_url = self.api_proxy + "/v1"
+        if len(self.api_proxy) != 0:
+            self.api_proxy_url = self.api_proxy
             openai.base_url = os.environ.get("OPENAI_API_URL", self.api_proxy_url)
             print("-" * 3)
             print(f"\033[1;32mUsing OpenAI API proxy, the proxy address is: {openai.base_url}\033[0m")
