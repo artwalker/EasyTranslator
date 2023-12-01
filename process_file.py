@@ -153,7 +153,7 @@ class ProcessFile:
         # Access all contents
         for item in self.book.get_items():
             if item.get_type() == ebooklib.ITEM_DOCUMENT:
-                # 使用BeautifulSoup提取纯文本
+                # Use BeautifulSoup to extract the original text
                 soup = BeautifulSoup(item.get_content(), 'html.parser')
                 self.text += re.sub(r'\n+', '\n', soup.get_text().strip())
 
