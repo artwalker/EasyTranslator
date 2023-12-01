@@ -242,9 +242,12 @@ class ProcessFile:
         """Replace the period with a period plus line break."""
         text = text.replace(". ", ".\n")
         text = text.replace("。", "。\n")
+        text = text.replace("?", "?\n")
+        text = text.replace("？", "？\n")
         text = text.replace("！", "！\n")
         text = text.replace("。\n”", "。”\n")
         text = text.replace("！\n”", "！”\n")
+        text = text.replace("？\n”", "？”\n")
         return text
 
     def _get_completion_from_messages(self):
@@ -418,6 +421,18 @@ class ProcessFile:
         except Exception as e:
             print(f"Failed to write EPUB: {e}")
 
+    def _get_title_of_md(self):
+        """Get title of the md."""
+        print("-" * 3)
+        print("\033[1;32mINFO:Parsing the md title.\033[0m")
+        with open(self.filename, 'r', encoding='utf-8') as file:
+            for line in file:
+                if line.startswith('#'):
+                    self.title = line.replace('#', '').strip()
+                    break
+        print("-" * 3)
+        print("\033[1;32mINFO:Finished parsing the md title.\033[0m")
+
     def _get_title_of_txt(self):
         """Get title of the txt."""
         print("-" * 3)
@@ -493,11 +508,20 @@ class ProcessFile:
             pass
         elif self.filename.endswith('.epub'):
             self.book = epub.read_epub(self.filename)
+        elif self.filename.endswith('.md'):
+            self._get_title_of_md()
         else:
             print("-" * 3)
             print("\033[91mINFO:Unsupported file type right now.\033[0m")
             print("-" * 3)
             sys.exit(0)
+
+    def _get_md_content(self):
+        """Get md content."""
+        print("-" * 3)
+        print("\033[1;32mINFO:Parsing the md content.\033[0m")
+        with open(self.filename, 'r', encoding='utf-8') as file:
+            self.text = file.read()
 
     def _get_txt_content(self):
         """Get txt content."""
@@ -562,6 +586,8 @@ class ProcessFile:
             self._convert_docx_to_text()
         elif self.filename.endswith('.epub'):
             self._get_epub_content()
+        elif self.filename.endswith('.md'):
+            self._get_md_content()
         else:
             print("\033[91mINFO:Unsupported to access the content of this file type right now.\033[0m")
 
