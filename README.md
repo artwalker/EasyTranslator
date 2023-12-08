@@ -15,7 +15,7 @@
 
 ## :bookmark_tabs: Introduction
 
-A command-line tool crafted with the OpenAI API, supporting translation for various file formats, including .txt, .pdf, .docx, .mobi, and .epub.  
+A command-line tool crafted with the OpenAI API, supporting translation for various file formats, including .txt, .pdf, .docx, .md, .mobi, and .epub.  
 Effortlessly translate your text files, eliminating language barriers with ease.
 
 ## :bell: Prerequisites

@@ -15,7 +15,7 @@
 
 ## :bookmark_tabs: 介绍
 
-利用 OpenAI API 打造的命令行工具，支持多种格式文件的翻译，包括 .txt、.pdf、.docx、.mobi 和 .epub。  
+利用 OpenAI API 打造的命令行工具，支持多种格式文件的翻译，包括 .txt、.pdf、.docx、.md、.mobi 和 .epub。  
 轻松快捷地翻译您的文本文件，让语言不再成为阻碍。
 
 ## :bell: 前置条件
