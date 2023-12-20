@@ -79,6 +79,7 @@ python easy_translator.py filename [--show] [--tlist] [--azure] [--test]
 ```bash
 python translate_all.py
 ```
+> Please add a period at the position in the .md document where there is no ending punctuation mark
 
 ###### :clap: Explanation
 
