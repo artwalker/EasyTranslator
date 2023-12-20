@@ -32,6 +32,8 @@ git clone https://github.com/artwalker/EasyTranslator.git
 ###### :scroll: 配置文件
 
 - .env
+  - 按照[这里](https://platform.openai.com/api-keys)的说明获取您的OpenAI API密钥
+
   - `OPENAI_API_KEY`: 指定 OpenAI API Key，可以使用多个，格式如 "sk-xxxxxxx, sk-xxxxxxx"
 
   - `GPT_MODEL`: `GPT_MODEL`: 指定所使用的模型，例如 "gpt-3.5-turbo"
@@ -73,6 +75,10 @@ git clone https://github.com/artwalker/EasyTranslator.git
 python easy_translator.py filename [--show] [--tlist] [--azure] [--test]
 ```
 
+```bash
+python translate_all.py
+```
+
 ###### :clap: 说明
 
 - `filename`: 指定要翻译的文件名，支持 txt、pdf、docx、epub、mobi 格式
@@ -84,6 +90,13 @@ python easy_translator.py filename [--show] [--tlist] [--azure] [--test]
 - `--azure`: 使用 Azure 调用 OpenAI API
 
 - `--test`: 用于测试翻译效果，翻译三段文字，通常用于调试程序
+
+- `translate_all.py`：使用脚本 translate_all.py 批量翻译文本
+  - 首先，请确保文件名的格式为 **01_filea.txt, 02_fileb.txt** 等，在每个文件名前添加排序前缀
+
+  - 其次，请将您想要翻译的文本放置在 **book** 目录中。如果需要，可以在源代码中修改此目录
+  
+  - 最后，请注意 Linux 和 Windows 处理事务的方式不同。为了确保正确执行，请根据您的操作系统进入源代码，并取消或注释掉必要部分。
 
 ###### :pushpin: 举例
 

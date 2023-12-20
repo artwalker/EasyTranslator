@@ -33,6 +33,8 @@ git clone https://github.com/artwalker/EasyTranslator.git
 ###### :scroll: Configuration Files
 
 - .env
+  - Follow the instructions [here](https://platform.openai.com/api-keys) to get your OpenAI API key
+
   - `OPENAI_API_KEY`: Specify the OpenAI API Key, can use multiple keys, format like "sk-xxxxxxx, sk-xxxxxxx"
 
   - `GPT_MODEL`: Specify the model to be used, for example, "gpt-3.5-turbo"
@@ -74,6 +76,10 @@ git clone https://github.com/artwalker/EasyTranslator.git
 python easy_translator.py filename [--show] [--tlist] [--azure] [--test]
 ```
 
+```bash
+python translate_all.py
+```
+
 ###### :clap: Explanation
 
 - `filename`: Specify the name of the file to be translated, supports txt, pdf, docx, epub, mobi formats
@@ -85,6 +91,13 @@ python easy_translator.py filename [--show] [--tlist] [--azure] [--test]
 - `--azure`: Use Azure to call the OpenAI API
 
 - `--test`: Used to test the translation effect, translates three paragraphs of text, typically used for debugging
+
+- `translate_all.py`: Use the script translate_all.py to batch translate text
+  - First, make sure that the file names are in the format of **01_filea.txt, 02_fileb.txt,** etc., with a sorting prefix added before each file name
+
+  - Second, place the text you want to translate in the **book** directory. You can modify this directory in the source code if needed
+
+  - Finally, please note that Linux and Windows handle things differently. To ensure correct execution, go into the source code and uncomment or comment out sections as necessary based on your operating system.
 
 ###### :pushpin: Example
 
