@@ -79,6 +79,8 @@ python easy_translator.py filename [--show] [--tlist] [--azure] [--test]
 python translate_all.py
 ```
 
+> 请在.md文档中没有结束标点符号的位置添加英文格式的句号.
+
 ###### :clap: 说明
 
 - `filename`: 指定要翻译的文件名，支持 txt、pdf、docx、epub、mobi 格式
