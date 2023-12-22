@@ -23,11 +23,11 @@ Effortlessly translate your text files, eliminating language barriers with ease.
 ###### :snake: Code Section
 
 ```bash
-pip install -r preconditions.txt
+git clone https://github.com/artwalker/EasyTranslator.git
 ```
 
 ```bash
-git clone https://github.com/artwalker/EasyTranslator.git
+pip install -r preconditions.txt
 ```
 
 ###### :scroll: Configuration Files
