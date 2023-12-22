@@ -23,10 +23,11 @@
 ###### :snake: 代码部分
 
 ```bash
-pip install -r preconditions.txt
-```
-```bash
 git clone https://github.com/artwalker/EasyTranslator.git
+```
+
+```bash
+pip install -r preconditions.txt
 ```
 
 ###### :scroll: 配置文件
