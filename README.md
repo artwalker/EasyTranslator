@@ -98,8 +98,6 @@ python translate_all.py
 
   - Second, place the text you want to translate in the **book** directory. You can modify this directory in the source code if needed
 
-  - Finally, please note that Linux and Windows handle things differently. To ensure correct execution, go into the source code and uncomment or comment out sections as necessary based on your operating system.
-
 ###### :pushpin: Example
 
 ```bash
