@@ -3,16 +3,10 @@ import glob
 from termcolor import colored
 
 # Get a list of all text files in the book directory
-# Linux version
-file_list = glob.glob('./book/*.txt')
-# Windows version
-# file_list = glob.glob('.\\book\\*.txt')
+file_list = glob.glob(os.path.join('.', 'book', '*.txt'))
 
 # Sort the files by their numerical prefix
-# Linux version
-file_list.sort(key=lambda x: int(x.split('_')[0].split('/')[-1]))
-# Windows version
-# file_list.sort(key=lambda x: int(x.split('_')[0].split('\\')[-1]))
+file_list.sort(key=lambda x: int(os.path.basename(x).split('_')[0]))
 
 # Use your translation function on each file
 for file in file_list:
