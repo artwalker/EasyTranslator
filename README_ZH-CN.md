@@ -133,6 +133,48 @@ python easy_translator.py ./book/profile.epub --show --tlist --test
 python easy_translator.py ./book/profile.epub --show --tlist --azure --test
 ```
 
+<div align="center">
+
+![use terminal in one file location to save the project](./assets/et_open_a_location_to_save_project.png)
+<br>
+<em>选择一个目录并使用终端克隆项目</em>
+
+</div>
+
+<div align="center">
+
+![enter the file by cloned](./assets/et_enter_the_code_file.png)
+<br>
+<em>进入克隆的项目的目录下/em>
+
+</div>
+
+<div align="center">
+
+![open terminal in current file](./assets/et_open_terminal_in_current_file.png)
+<br>
+<em>在当前目录下打开终端</em>
+
+</div>
+
+<div align="center">
+
+
+![run pip command](./assets/et_run_the_pip_command.png)
+<br>
+<em>运行pip指令</em>
+
+</div>
+
+<div align="center">
+
+
+![begin to translation happily](./assets/et_run_translation.png)
+<br>
+<em>开始愉快地翻译旅程吧</em>
+
+</div>
+
 ## :gift_heart: 打赏
 <p align="center">如果你觉得这个程序像一杯热咖啡一样唤醒了你的灵魂，或者像一把瑞士军刀一样解决了你的问题，那么你可能想要考虑打赏一下；</p>  
 <p align="center">就像给咖啡师小费一样，你的打赏将为我注入更多的动力去改进这个程序及创造新的代码，让世界成为一个更好地方；</p>  

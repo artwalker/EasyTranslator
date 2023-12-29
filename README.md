@@ -128,6 +128,48 @@ python easy_translator.py ./book/profile.txt --show --tlist --azure
 python easy_translator.py ./book/profile.txt --show --tlist --azure --test
 ```
 
+<div align="center">
+
+![use terminal in one file location to save the project](./assets/et_open_a_location_to_save_project.png)
+<br>
+<em>Choose a directory and clone the project using the terminal</em>
+
+</div>
+
+<div align="center">
+
+![enter the file by cloned](./assets/et_enter_the_code_file.png)
+<br>
+<em>Enter the directory of the cloned project</em>
+
+</div>
+
+<div align="center">
+
+![open terminal in current file](./assets/et_open_terminal_in_current_file.png)
+<br>
+<em>Open the terminal in the current directory</em>
+
+</div>
+
+<div align="center">
+
+
+![run pip command](./assets/et_run_the_pip_command.png)
+<br>
+<em>Run the pip command</em>
+
+</div>
+
+<div align="center">
+
+
+![begin to translation happily](./assets/et_run_translation.png)
+<br>
+<em>Start the translation journey happily</em>
+
+</div>
+
 ## :gift_heart: Reward
 
 <p align="left">

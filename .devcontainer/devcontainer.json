@@ -8,7 +8,8 @@
 		"vscode": {
 			"extensions": [
 				"GitHub.copilot",
-				"omthemes.omthemes"
+				"omthemes.omthemes",
+				"DavidAnson.vscode-markdownlint"
 			]
 		}
 	}
