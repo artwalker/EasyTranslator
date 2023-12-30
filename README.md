@@ -130,17 +130,17 @@ python easy_translator.py ./book/profile.txt --show --tlist --azure --test
 
 <div align="center">
 
-![configure key](./assets/et_config_sk.png)
+![use terminal in one file location to save the project](./assets/et_open_a_location_to_save_project.png)
 <br>
-<em>Configure OpenAI's key</em>
+<em>Choose a directory and clone the project using the terminal</em>
 
 </div>
 
 <div align="center">
 
-![use terminal in one file location to save the project](./assets/et_open_a_location_to_save_project.png)
+![configure key](./assets/et_config_sk.png)
 <br>
-<em>Choose a directory and clone the project using the terminal</em>
+<em>Configure OpenAI's key</em>
 
 </div>
 
