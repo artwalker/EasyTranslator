@@ -143,17 +143,17 @@ python easy_translator.py ./book/profile.epub --show --tlist --azure --test
 
 <div align="center">
 
-![configure key](./assets/et_config_sk.png)
+![enter the file by cloned](./assets/et_enter_the_code_file.png)
 <br>
-<em>配置OpenAI的Key</em>
+<em>进入克隆的项目的目录下/em>
 
 </div>
 
 <div align="center">
 
-![enter the file by cloned](./assets/et_enter_the_code_file.png)
+![configure key](./assets/et_config_sk.png)
 <br>
-<em>进入克隆的项目的目录下/em>
+<em>配置OpenAI的Key</em>
 
 </div>
 

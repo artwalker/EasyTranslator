@@ -138,17 +138,17 @@ python easy_translator.py ./book/profile.txt --show --tlist --azure --test
 
 <div align="center">
 
-![configure key](./assets/et_config_sk.png)
+![enter the file by cloned](./assets/et_enter_the_code_file.png)
 <br>
-<em>Configure OpenAI's key</em>
+<em>Enter the directory of the cloned project</em>
 
 </div>
 
 <div align="center">
 
-![enter the file by cloned](./assets/et_enter_the_code_file.png)
+![configure key](./assets/et_config_sk.png)
 <br>
-<em>Enter the directory of the cloned project</em>
+<em>Configure OpenAI's key</em>
 
 </div>
 
