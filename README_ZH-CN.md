@@ -135,7 +135,7 @@ python easy_translator.py ./book/profile.epub --show --tlist --azure --test
 
 <div align="center">
 
-![use terminal in one file location to save the project](./assets/et_config_sk.png)
+![configure key](./assets/et_config_sk.png)
 <br>
 <em>配置OpenAI的Key</em>
 
