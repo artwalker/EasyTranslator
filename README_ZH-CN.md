@@ -135,6 +135,14 @@ python easy_translator.py ./book/profile.epub --show --tlist --azure --test
 
 <div align="center">
 
+![use terminal in one file location to save the project](./assets/et_config_sk.png)
+<br>
+<em>配置OpenAI的Key</em>
+
+</div>
+
+<div align="center">
+
 ![use terminal in one file location to save the project](./assets/et_open_a_location_to_save_project.png)
 <br>
 <em>选择一个目录并使用终端克隆项目</em>
