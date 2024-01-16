@@ -52,7 +52,7 @@ pip install -r preconditions.txt
   - `OPENAI_API_VERSION_AZURE`: Version of the API
 
 - settings.cfg:
-  - `openai-proxy`: Proxy for OpenAI
+  - `openai-proxy`: Proxy for OpenAI. (For those who use custom implementation, such as [copilot-gpt4-service](https://github.com/aaamoon/copilot-gpt4-service), fill in the URL with api version, like `http://your.domain.com:port/v1`)
 
   - `language`: Language for translation
 
